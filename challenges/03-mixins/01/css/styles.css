@@ -1,0 +1,76 @@
+body {
+  font-family: system-ui;
+  margin: 0;
+}
+
+.section-one,
+.section-two,
+.section-three {
+  text-align: center;
+  padding: 10vh 0;
+}
+
+.section-one {
+  background: linear-gradient(90deg, red, blue);
+}
+
+.section-two {
+  background: linear-gradient(-45deg, green, yellow);
+}
+
+.section-three {
+  background: linear-gradient(120deg, purple, orange);
+}
+
+.title {
+  position: relative;
+}
+.title::after {
+  content: "";
+  display: block;
+  width: 30%;
+  height: 1px;
+  margin: 0.5em auto;
+  background-color: black;
+}
+
+.button-one {
+  text-decoration: none;
+  padding-block: 1.5em;
+  padding-inline: 4.5em;
+  color: white;
+  background-color: black;
+}
+.button-one:hover, .button-one:focus {
+  color: black;
+  background-color: white;
+}
+
+.button-two {
+  text-decoration: none;
+  padding-block: 1em;
+  padding-inline: 3em;
+  color: red;
+  background-color: green;
+}
+.button-two:hover, .button-two:focus {
+  color: blue;
+  background-color: orange;
+}
+
+.badge-one,
+.badge-two {
+  text-decoration: none;
+  padding-block: 1em;
+  padding-inline: 3em;
+  color: black;
+  background-color: cornsilk;
+}
+.badge-one:hover, .badge-one:focus,
+.badge-two:hover,
+.badge-two:focus {
+  color: black;
+  background-color: cornsilk;
+}
+
+/*# sourceMappingURL=styles.css.map */
