@@ -1,4 +1,6 @@
-@use "sass:map";
+@use 'sass:map';
+@use 'sass:meta';
+@use 'sass:math';
 
 $breakpoints: (
   small: 30em,
@@ -8,10 +10,23 @@ $breakpoints: (
 );
 
 @mixin mq($size) {
-  $breakpoint: map.get($breakpoints, $size);
-
-  @media screen and (min-width: $breakpoint) {
-    @content;
+  @if map.has-key($breakpoints, $size) {
+    $breakpoint: map.get($breakpoints, $size);
+    @debug $breakpoint;
+    @media screen and (min-width: $breakpoint) {
+      @content;
+    }
+  } @else if meta.type-of($size) == number {
+    @if math.is-unitless($size) {
+      @error 'When using a number with @mq() make sure to include a unit';
+    }
+    else {
+      @media screen and (min-width: $size) {
+        @content;
+      }
+    }
+  } @else {
+    @error 'the keyword #{$size} is not in the $breakpoints map. You must either use a keyword from the map or a specific number (e.g. 40em)';
   }
 }
 

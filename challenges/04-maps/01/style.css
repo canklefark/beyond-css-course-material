@@ -1,0 +1,17 @@
+/* Error: "the keyword reallysmall is not in the $breakpoints map. You must either use a keyword from the map or a specific number (e.g. 40em)"
+ *    ,
+ * 46 |   @include mq(reallysmall) {
+ *    |   ^^^^^^^^^^^^^^^^^^^^^^^^
+ *    '
+ *   style.scss 46:3  root stylesheet */
+
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: 'Error: "the keyword reallysmall is not in the $breakpoints map. You must either use a keyword from the map or a specific number (e.g. 40em)"\a    \2577 \a 46 \2502    @include mq(reallysmall) {\a    \2502    ^^^^^^^^^^^^^^^^^^^^^^^^\a    \2575 \a   style.scss 46:3  root stylesheet';
+}
